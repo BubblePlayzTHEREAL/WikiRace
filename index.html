@@ -23,11 +23,9 @@
   a{color:inherit}
   .wrap{max-width:1180px; margin:0 auto; padding:18px 18px 60px}
 
-  /* ---------- Lobby ---------- */
   .topbar{display:flex; align-items:center; gap:12px; padding:14px 0 6px}
   .logo{font-weight:800; font-size:22px; letter-spacing:.3px}
   .logo .dot{color:var(--accent)}
-  .tag{color:var(--muted); font-size:13px}
   .card{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:22px}
   .card h2{margin:0 0 4px; font-size:18px}
   .sub{color:var(--muted); font-size:13px; margin-bottom:16px}
@@ -40,7 +38,6 @@
   input[type=text],textarea{width:100%; background:var(--panel2); color:var(--text); border:1px solid var(--border);
     border-radius:9px; padding:10px 11px; font-size:14px; outline:none}
   input[type=text]:focus,textarea:focus{border-color:var(--accent)}
-  textarea{resize:vertical; min-height:74px; word-break:break-all; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:11.5px; line-height:1.45}
 
   .btn{background:var(--panel3); color:var(--text); border:1px solid var(--border); border-radius:9px;
     padding:10px 14px; font-size:14px; font-weight:600; transition:.15s}
@@ -66,7 +63,6 @@
   .howto{color:var(--muted); font-size:13px; line-height:1.7}
   .howto b{color:var(--text)}
   .howto ol{margin:6px 0; padding-left:18px}
-  .stepnum{color:var(--accent); font-weight:700}
 
   .players-list{display:flex; flex-direction:column; gap:6px; margin:8px 0}
   .players-list .p{display:flex; justify-content:space-between; align-items:center; background:var(--panel2);
@@ -80,7 +76,12 @@
   .banner.good{border-left-color:var(--good)}
   .banner b{color:var(--text)}
 
-  /* ---------- Game ---------- */
+  .roomcode{display:flex; gap:8px; align-items:stretch}
+  .roomcode input{flex:1; text-align:center; letter-spacing:8px; font-size:24px; font-weight:800;
+    color:var(--accent2); background:var(--panel2); user-select:all}
+  .codein input{flex:1; text-align:center; letter-spacing:6px; font-size:20px; font-weight:700; text-transform:uppercase}
+  .hint{font-size:12px; color:var(--dim); margin-top:6px}
+
   #game{display:none}
   .ghead{display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding:12px 0}
   .ghead .ttl{font-weight:800; font-size:18px}
@@ -104,7 +105,6 @@
   .viewer .bar .btn:hover{border-color:var(--accent)}
   .viewer .body{padding:18px 22px; max-height:72vh; overflow:auto; font-size:15px; line-height:1.6}
 
-  /* Wikipedia content styling (light paper) */
   .article-view p{margin:0 0 12px}
   .article-view h2,.article-view h3,.article-view h4{margin:18px 0 8px; line-height:1.25; border-bottom:1px solid #e2e6ea; padding-bottom:3px}
   .article-view h2{font-size:22px} .article-view h3{font-size:18px; border-bottom:none} .article-view h4{font-size:15px; border-bottom:none}
@@ -115,7 +115,6 @@
   .article-view img{max-width:100%; height:auto}
   .article-view .infobox{float:right; clear:right; width:300px; max-width:45%; margin:0 0 12px 16px; background:#f6f8fa;
     border:1px solid #c8d0da; border-radius:8px; font-size:12.5px; padding:6px; border-collapse:separate; border-spacing:2px}
-  .article-view .infobox img{border:none}
   .article-view .wikitable{border-collapse:collapse; margin:8px 0; font-size:13px; background:#fff}
   .article-view .wikitable th,.article-view .wikitable td{border:1px solid #c8cfd8; padding:5px 8px}
   .article-view .wikitable th{background:#eef1f5}
@@ -126,23 +125,19 @@
   .article-view ul,.article-view ol{margin:0 0 12px; padding-left:22px}
   .article-view li{margin:2px 0}
   .article-view .hatnote,.article-view .dablink{font-style:italic; color:#444; background:#f3f5f8; border-left:3px solid #cfd6df; padding:4px 10px; margin:0 0 12px; font-size:13px}
-  .article-view .mw-redirect,.article-view .mw-disambig{color:var(--link)}
-  .article-view .navbox,.article-view .vertical-navbox{display:none} /* hide navboxes to keep the race honest & clean */
+  .article-view .navbox,.article-view .vertical-navbox{display:none}
   .article-view .metadata{display:none}
   .article-view .reference{display:none}
   .article-view .references,.article-view .reflist{display:none}
   .article-view .mw-editsection{display:none}
   .article-view .gallery{display:flex; flex-wrap:wrap; gap:6px}
   .article-view table{font-size:13.5px}
-  .article-view figure{margin:6px 0}
-  .article-view .ambox{background:#fdf6e3; border:1px solid #e0d6a8; border-left:4px solid #d8c46a; padding:6px 10px; margin:0 0 12px; font-size:13px}
   .article-view .toc{display:none}
   .article-view .mw-empty-elt{display:none}
   .article-view blockquote{border-left:3px solid #c8d0da; margin:6px 0; padding:4px 12px; color:#444}
   .article-view .thumbinner{display:flex; flex-direction:column}
-  .article-view .nowrap{white-space:nowrap}
+  .article-view .ambox{background:#fdf6e3; border:1px solid #e0d6a8; border-left:4px solid #d8c46a; padding:6px 10px; margin:0 0 12px; font-size:13px}
 
-  /* sidebar */
   .side{display:flex; flex-direction:column; gap:12px; position:sticky; top:14px}
   .side .card{padding:14px}
   .side h3{margin:0 0 8px; font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:.6px}
@@ -162,7 +157,6 @@
     display:inline-block; animation:sp 1s linear infinite; vertical-align:-2px}
   @keyframes sp{to{transform:rotate(360deg)}}
 
-  /* modal */
   .modal{position:fixed; inset:0; background:rgba(6,8,12,.72); display:flex; align-items:center; justify-content:center; z-index:50; padding:16px}
   .modal .box{background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:26px; max-width:460px; width:100%; text-align:center}
   .modal h2{margin:0 0 8px; font-size:24px}
@@ -170,10 +164,6 @@
   .modal .btns{display:flex; gap:8px; justify-content:center}
 
   .foot{color:var(--dim); font-size:12px; text-align:center; padding:18px 0 0}
-  .codebox{position:relative}
-  .codebox .copy{position:absolute; top:6px; right:6px}
-  .hint{font-size:12px; color:var(--dim); margin-top:6px}
-  .kbd{background:var(--panel3); border:1px solid var(--border); border-radius:5px; padding:1px 6px; font-size:12px; font-family:ui-monospace,monospace}
 </style>
 </head>
 <body>
@@ -188,7 +178,7 @@
 
     <div class="card" style="margin-bottom:16px">
       <h2>Race through Wikipedia, head-to-head.</h2>
-      <p class="sub">You and your friends start on the same random article. First one to click their way to the target article wins. Every link you click counts — fewer clicks is better.</p>
+      <p class="sub">You and your friends start on the same article. First one to click their way to the target article wins. Every link you click counts — fewer is better.</p>
 
       <label class="fld">
         <span>Your display name</span>
@@ -218,13 +208,13 @@
         </div>
 
         <div class="row" style="margin-bottom:14px">
-          <button class="btn good" id="host-open">Open game &amp; invite</button>
-          <span class="hint">After opening, share the invite code or just have a friend open this page in another tab on this browser.</span>
+          <button class="btn good" id="host-open">Open game &amp; get code</button>
+          <span class="hint">You'll get a 5-character room code to share — or open another tab on this browser for instant local play.</span>
         </div>
 
         <div id="host-lobby" class="hidden">
-          <div class="banner good" id="local-banner">
-            <b>Same-browser play is on.</b> Anyone who opens this page in another tab on this browser can join instantly — no code needed.
+          <div class="banner good">
+            <b>Same-browser play is on.</b> Anyone who opens this page in another tab on this browser joins instantly — no code needed.
           </div>
 
           <div class="grid2">
@@ -234,18 +224,16 @@
               <button class="btn primary" id="host-start" disabled>Start race</button>
             </div>
             <div>
-              <h3 style="font-size:13px;color:var(--muted);text-transform:uppercase;margin:0 0 8px;letter-spacing:.6px">Remote invite (cross-device)</h3>
+              <h3 style="font-size:13px;color:var(--muted);text-transform:uppercase;margin:0 0 8px;letter-spacing:.6px">Cross-device invite</h3>
               <label class="fld">
-                <span>1. Send this invite code to a friend</span>
-                <div class="codebox"><textarea id="offer-out" readonly></textarea>
-                <button class="btn small copy" id="copy-offer">Copy</button></div>
+                <span>Share this 5-character room code</span>
+                <div class="roomcode">
+                  <input type="text" id="room-code" readonly>
+                  <button class="btn small" id="copy-code">Copy</button>
+                </div>
               </label>
-              <label class="fld">
-                <span>2. Paste their reply code here</span>
-                <textarea id="answer-in" placeholder="Paste the code your friend sends back..."></textarea>
-              </label>
-              <button class="btn primary" id="answer-go">Connect remote player</button>
-              <div class="hint" id="remote-status"></div>
+              <div class="hint" id="remote-status">Waiting for a remote player to join with this code…</div>
+              <p class="hint" style="margin-top:10px">A friend opens this page anywhere, picks Join, types the code, and connects directly to you over WebRTC.</p>
             </div>
           </div>
         </div>
@@ -255,28 +243,25 @@
       <div id="join-flow" class="hidden">
         <div id="join-local" class="hidden">
           <div class="banner good">
-            <b>Local game found!</b> <span id="local-host-name"></span> is hosting. Click join to enter the race.
+            <b>Local game found!</b> <span id="local-host-name"></span> is hosting on this browser.
             <div style="margin-top:8px"><button class="btn primary" id="join-local-go">Join game</button></div>
           </div>
         </div>
 
         <div class="grid2" style="margin-top:14px">
           <div>
-            <h3 style="font-size:13px;color:var(--muted);text-transform:uppercase;margin:0 0 8px;letter-spacing:.6px">Remote join (cross-device)</h3>
+            <h3 style="font-size:13px;color:var(--muted);text-transform:uppercase;margin:0 0 8px;letter-spacing:.6px">Join with a room code</h3>
             <label class="fld">
-              <span>1. Paste the host's invite code</span>
-              <textarea id="offer-in" placeholder="Paste invite code from host..."></textarea>
+              <span>Enter the host's 5-character room code</span>
+              <div class="codein roomcode">
+                <input type="text" id="room-code-in" maxlength="5" placeholder="7QK2M" autocomplete="off">
+              </div>
             </label>
-            <button class="btn primary" id="offer-go">Generate reply code</button>
-            <label class="fld" style="margin-top:12px">
-              <span>2. Send this reply code back to the host</span>
-              <div class="codebox"><textarea id="answer-out" readonly></textarea>
-              <button class="btn small copy" id="copy-answer">Copy</button></div>
-            </label>
-            <div class="hint" id="join-remote-status">Waiting for the host to paste your reply code...</div>
+            <button class="btn primary" id="join-code-go">Connect</button>
+            <div class="hint" id="join-remote-status"></div>
           </div>
           <div class="howto">
-            <b>No code?</b> Open this same page in another browser tab on this computer and a local game will appear above — tap Join and you're in instantly.
+            <b>No code?</b> If you're on the same computer as the host, just open this page in another browser tab and a local game will appear above — tap Join and you're in instantly, no code needed.
           </div>
         </div>
       </div>
@@ -284,15 +269,15 @@
       <div class="howto" style="margin-top:18px;border-top:1px solid var(--border);padding-top:14px">
         <b>How to play</b>
         <ol>
-          <li>One player creates a game and picks a start &amp; target article (or rolls random).</li>
-          <li>Others join — either automatically in another tab on the same browser, or by swapping invite/reply codes for cross-device play.</li>
+          <li>One player creates a game and picks a start &amp; target article (or rolls random). They get a 5-character room code.</li>
+          <li>Others join — either with the room code (cross-device) or automatically in another tab on the same browser.</li>
           <li>The host starts the race. Everyone lands on the start article.</li>
           <li>Click only <b>blue links</b> inside articles to navigate. Each click = +1 to your score.</li>
           <li>First player to reach the target article wins. Lowest click count breaks ties.</li>
         </ol>
       </div>
     </div>
-    <div class="foot">WikiRace · content from Wikipedia (CC BY-SA) · peer-to-peer, no server</div>
+    <div class="foot">WikiRace · content from Wikipedia (CC BY-SA) · peer-to-peer over WebRTC, signaling via a public MQTT broker · no server of your own</div>
   </div>
 
   <!-- ============ GAME ============ -->
@@ -322,13 +307,12 @@
         </div>
         <div class="card">
           <h3>Tips</h3>
-          <p class="sub" style="margin:0">Links are <b style="color:var(--link)">blue &amp; underlined</b>. Try going through broad concepts (countries, science, history) to travel fast. Use the <b>Back</b> button to undo a misclick without penalty.</p>
+          <p class="sub" style="margin:0">Links are <b style="color:var(--link)">blue &amp; underlined</b>. Travel through broad concepts (countries, science, history) to move fast. Use <b>Back</b> to undo a misclick without penalty.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- win/lose modal -->
   <div class="modal hidden" id="end-modal">
     <div class="box">
       <h2 id="end-title">You won!</h2>
@@ -344,14 +328,21 @@
 "use strict";
 /* ============================================================
    WikiRace — single-file multiplayer wikiracing game
-   Transport: BroadcastChannel (same-browser tabs) + WebRTC
-              DataChannel with manual signalling (cross-device)
-   Content:   Wikipedia MediaWiki API (anonymous CORS)
+   Transports:
+     - BroadcastChannel  : zero-config same-browser tabs
+     - WebRTC DataChannel: cross-device (1 remote opponent)
+       Signaling: a 5-char room code relayed over a public MQTT
+       broker (HiveMQ) via a tiny inline MQTT 3.1.1 (QoS 0) client.
+   Content: Wikipedia MediaWiki API (anonymous CORS).
    ============================================================ */
 
 const $ = (id) => document.getElementById(id);
 const rid = () => (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2)+Date.now().toString(36));
 const fmtTime = (s) => { const m=Math.floor(s/60); const r=Math.floor(s%60); return m+":"+(r<10?"0":"")+r; };
+const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const CODE_CHARS = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'; // no I,L,O,0,1
+function genCode(){ let s=''; for(let i=0;i<5;i++) s+=CODE_CHARS[Math.floor(Math.random()*CODE_CHARS.length)]; return s; }
 
 /* ---------- Wikipedia content helpers ---------- */
 const WIKI_NS = ['Special','File','Image','Media','Category','Help','Wikipedia','Template','Portal',
@@ -371,7 +362,6 @@ function articleTitleFromHref(href){
   }
   return title.replace(/_/g, ' ');
 }
-
 async function fetchArticle(title){
   const url = 'https://en.wikipedia.org/w/api.php?action=parse&page='+encodeURIComponent(title)+
     '&prop=text&format=json&origin=*&redirects=1&disableeditsection=1&disabletoc=1&disablelimitreport=1';
@@ -382,7 +372,6 @@ async function fetchArticle(title){
   if(!data.parse) throw new Error('Article not found');
   return { title: data.parse.title, html: data.parse.text['*'] };
 }
-
 async function fetchRandomTitle(){
   const url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&list=random&rnlimit=1&rnnamespace=0&origin=*';
   const r = await fetch(url);
@@ -390,72 +379,115 @@ async function fetchRandomTitle(){
   if(d && d.query && d.query.random && d.query.random[0]) return d.query.random[0].title;
   throw new Error('Could not pick a random article');
 }
-
 function renderArticle(html){
   const el = $('article-content');
   const tpl = document.createElement('template');
   tpl.innerHTML = html;
-  // strip things that don't belong in a race
   tpl.content.querySelectorAll(
     'script,style,link,.mw-editsection,.reference,.references,.reflist,.navbox,.vertical-navbox,.metadata,.noprint,.mw-empty-elt,.shortdescription'
   ).forEach(n => n.remove());
-  // rewrite / collect every anchor
   tpl.content.querySelectorAll('a').forEach(a => {
     const href = a.getAttribute('href') || '';
     const redlink = a.classList.contains('new');
     const title = redlink ? null : articleTitleFromHref(href);
-    if(title){
-      a.setAttribute('data-nav', title);
-      a.setAttribute('href', '#');
-      a.classList.add('wikirace-link');
-    } else {
-      a.removeAttribute('href');
-      a.classList.add('wikirace-disabled');
-    }
+    if(title){ a.setAttribute('data-nav', title); a.setAttribute('href', '#'); a.classList.add('wikirace-link'); }
+    else { a.removeAttribute('href'); a.classList.add('wikirace-disabled'); }
   });
-  // make images not link out
-  tpl.content.querySelectorAll('a.wikirace-disabled img').forEach(()=>{});
   el.innerHTML = '';
   el.appendChild(tpl.content.cloneNode(true));
   el.scrollTop = 0;
 }
 
+/* ---------- Minimal MQTT 3.1.1 client (QoS 0) over WebSocket ---------- */
+function encodeRemaining(n){ const o=[]; do{ let b=n%128; n=Math.floor(n/128); if(n>0)b|=0x80; o.push(b);}while(n>0); return o; }
+class MiniMQTT {
+  constructor(url){ this.url=url; this.ws=null; this.msgHandler=null; this.onOpen=null; this.onClose=null;
+    this._pktId=1; this._keepalive=30; this._pingTimer=null; this._onConnack=null; }
+  connect(clientId){
+    return new Promise((res,rej)=>{
+      let settled=false;
+      try { this.ws=new WebSocket(this.url); } catch(e){ rej(e); return; }
+      this.ws.binaryType='arraybuffer';
+      this.ws.onopen=()=>{ try{ this._sendConnect(clientId); }catch(e){ if(!settled){settled=true; rej(e);} } };
+      this.ws.onmessage=(e)=>{ this._onRaw(e.data); };
+      this.ws.onclose=()=>{ this._cleanup(); if(!settled){settled=true; rej(new Error('broker closed'));} this.onClose&&this.onClose(); };
+      this.ws.onerror=()=>{ if(!settled){settled=true; rej(new Error('broker error'));} };
+      this._onConnack=()=>{ settled=true; res(); this.onOpen&&this.onOpen(); this._startPing(); };
+      setTimeout(()=>{ if(!settled){settled=true; rej(new Error('broker timeout'));} }, 10000);
+    });
+  }
+  _startPing(){ if(this._pingTimer)clearInterval(this._pingTimer); this._pingTimer=setInterval(()=>{ try{ this._sendBytes([0xC0,0x00]); }catch(e){} }, this._keepalive*1000); }
+  _cleanup(){ if(this._pingTimer){clearInterval(this._pingTimer); this._pingTimer=null;} }
+  _sendBytes(arr){ const b=new Uint8Array(arr); this.ws.send(b.buffer); }
+  _sendConnect(cid){
+    const cidB=new TextEncoder().encode(cid);
+    const vh=[0,4,77,81,84,84,0x04,0x02,0,this._keepalive];
+    const payload=[(cidB.length>>8)&0xff,cidB.length&0xff,...cidB];
+    const body=vh.concat(payload);
+    this._sendBytes([0x10,...encodeRemaining(body.length),...body]);
+  }
+  subscribe(topic){
+    const t=new TextEncoder().encode(topic);
+    const pktId=this._pktId++;
+    const body=[(pktId>>8)&0xff,pktId&0xff,(t.length>>8)&0xff,t.length&0xff,...t,0x00];
+    this._sendBytes([0x82,...encodeRemaining(body.length),...body]);
+  }
+  publish(topic,str){
+    const t=new TextEncoder().encode(topic); const p=new TextEncoder().encode(str);
+    const body=[(t.length>>8)&0xff,t.length&0xff,...t,...p];
+    this._sendBytes([0x30,...encodeRemaining(body.length),...body]);
+  }
+  _onRaw(buf){
+    const u=new Uint8Array(buf);
+    if(u.length<2)return;
+    let pos=0;
+    while(pos<u.length){
+      const start=pos;
+      const type=u[pos]>>4; pos++;
+      let mult=1,rem=0;
+      while(true){ if(pos>=u.length)return; const b=u[pos++]; rem+=(b&0x7f)*mult; if(!(b&0x80))break; mult*=128; if(mult>128*128*128*128)break; }
+      const bodyEnd=pos+rem;
+      if(type===2){ this._onConnack&&this._onConnack(); }
+      else if(type===9){ /* SUBACK */ }
+      else if(type===13){ /* PINGRESP */ }
+      else if(type===3){
+        let off=pos;
+        const tlen=(u[off]<<8)|u[off+1]; off+=2;
+        const topic=new TextDecoder().decode(u.subarray(off,off+tlen)); off+=tlen;
+        const payload=new TextDecoder().decode(u.subarray(off,bodyEnd));
+        this.msgHandler&&this.msgHandler(topic,payload);
+      }
+      pos=bodyEnd;
+      if(pos===start) break;
+    }
+  }
+  close(){ try{ this._sendBytes([0xE0,0x00]); }catch(e){} try{ this.ws.close(); }catch(e){} this._cleanup(); }
+}
+
 /* ---------- Networking ---------- */
+const BROKER_URL = 'wss://broker.hivemq.com:8884/mqtt';
+let broker = null, roomCode = null, offerTimer = null;
+let joiningRemote = false;
+
 const Net = {
   selfId: rid(),
   selfName: '',
   isHost: false,
-  hosting: false,           // host is in lobby waiting for joiners
-  peers: new Map(),         // id -> {id, name, kind:'local'|'webrtc', send(str)}
-  joinedPeers: new Set(),   // peer ids that actually joined the hosted game
+  hosting: false,
+  peers: new Map(),
+  joinedPeers: new Set(),
   onPeer: null,
   onPeerLeft: null,
   onMessage: null,
-  broadcast(msg){
-    const s = JSON.stringify(msg);
-    for(const p of this.peers.values()){
-      try { p.send(s); } catch(e){ console.warn('send fail', e); }
-    }
-  },
-  sendTo(id, msg){
-    const p = this.peers.get(id);
-    if(p) try { p.send(JSON.stringify(msg)); } catch(e){}
-  }
+  broadcast(msg){ const s=JSON.stringify(msg); for(const p of this.peers.values()){ try{ p.send(s); }catch(e){} } },
+  sendTo(id, msg){ const p=this.peers.get(id); if(p) try{ p.send(JSON.stringify(msg)); }catch(e){} },
+  peersOfKind(kind){ const out=[]; for(const [id,p] of this.peers) if(p.kind===kind) out.push(id); return out; }
 };
 
 /* --- BroadcastChannel local transport --- */
-let bc = null;
-let helloTimer = null;
+let bc = null, helloTimer = null;
 try { bc = new BroadcastChannel('wikirace-net-v2'); } catch(e){ bc = null; }
-
-function localSend(toId, payload){
-  if(!bc) return;
-  bc.postMessage({from: Net.selfId, to: toId || 'ALL', kind:'msg', payload});
-}
-function localAnnounce(){
-  if(!bc) return;
-  bc.postMessage({from: Net.selfId, to:'ALL', kind:'hello', name: Net.selfName, hosting: Net.hosting});
-}
+function localAnnounce(){ if(!bc) return; bc.postMessage({from:Net.selfId, to:'ALL', kind:'hello', name:Net.selfName, hosting:Net.hosting}); }
 if(bc){
   bc.onmessage = (e) => {
     const d = e.data;
@@ -469,7 +501,6 @@ if(bc){
         Net.peers.set(d.from, p);
         Net.onPeer && Net.onPeer(p);
       } else { p.name = d.name || p.name; }
-      // reply so the other side discovers us too
       bc.postMessage({from:Net.selfId, to:d.from, kind:'hello', name:Net.selfName, hosting:Net.hosting});
       Net.onMessage && Net.onMessage(d.from, {t:'hello', name:d.name||'', hosting:!!d.hosting});
     } else if(d.kind === 'msg'){
@@ -490,25 +521,20 @@ if(bc){
 }
 window.addEventListener('beforeunload', ()=>{ try{ bc && bc.postMessage({from:Net.selfId, kind:'bye'}); }catch(e){} });
 
-/* --- WebRTC transport (manual signalling, non-trickle) --- */
-let pc = null, dc = null;
+/* --- WebRTC over MQTT-brokered room code (full SDP, re-published) --- */
+let pc = null, dc = null, remoteHostId = null;
 const ICE = [{urls:'stun:stun.l.google.com:19302'},{urls:'stun:stun1.l.google.com:19302'}];
 function waitForIce(c){
   return new Promise(res => {
     if(c.iceGatheringState === 'complete') return res();
-    let done = false;
-    const fin = () => { if(done) return; done=true; c.onicegatheringstatechange=null; res(); };
-    c.onicegatheringstatechange = () => { if(c.iceGatheringState === 'complete') fin(); };
-    setTimeout(fin, 5000); // fallback so we never hang
+    let done=false;
+    const fin=()=>{ if(done)return; done=true; c.onicegatheringstatechange=null; res(); };
+    c.onicegatheringstatechange=()=>{ if(c.iceGatheringState==='complete') fin(); };
+    setTimeout(fin, 4000);
   });
 }
-function encodeDesc(desc){ return btoa(JSON.stringify({type:desc.type, sdp:desc.sdp})); }
-function decodeDesc(str){ return JSON.parse(atob(str.trim())); }
-
 function attachDataChannel(channel, peerId){
   const id = peerId || ('webrtc-'+Net.selfId);
-  // only register the peer once the channel is actually OPEN, so an
-  // unconnected data channel never counts as a joined player.
   const ensurePeer = () => {
     if(!Net.peers.has(id)){
       const p = { id, name:'', kind:'webrtc', send(s){ try{ channel.send(s); }catch(e){} } };
@@ -517,8 +543,7 @@ function attachDataChannel(channel, peerId){
     }
   };
   channel.onopen = ensurePeer;
-  channel.onmessage = (e) => {
-    ensurePeer();
+  channel.onmessage = (e) => { ensurePeer();
     let msg; try { msg = JSON.parse(e.data); } catch(err){ return; }
     Net.onMessage && Net.onMessage(id, msg);
   };
@@ -528,51 +553,59 @@ function attachDataChannel(channel, peerId){
   };
   channel.onerror = (e)=> console.warn('dc error', e);
 }
-
-async function hostCreateOffer(){
-  pc = new RTCPeerConnection({iceServers:ICE});
-  dc = pc.createDataChannel('game', {ordered:true});
-  attachDataChannel(dc, 'remote');
-  const offer = await pc.createOffer();
-  await pc.setLocalDescription(offer);
-  await waitForIce(pc);
-  return encodeDesc(pc.localDescription);
+function brokerPublish(obj){ if(broker && roomCode){ try{ broker.publish('wikirace/'+roomCode, JSON.stringify(obj)); }catch(e){} } }
+async function brokerConnect(code){
+  if(broker){ try{ broker.close(); }catch(e){} broker=null; }
+  const b = new MiniMQTT(BROKER_URL);
+  b.msgHandler = onBrokerMsg;
+  b.onClose = ()=>{};
+  await b.connect('wkr-'+Net.selfId.replace(/[^a-zA-Z0-9]/g,'').slice(0,16));
+  b.subscribe('wikirace/'+code);
+  broker = b;
 }
-async function hostPasteAnswer(answerStr){
-  if(!pc) throw new Error('No pending offer');
-  const desc = decodeDesc(answerStr);
-  await pc.setRemoteDescription(desc);
+function onBrokerMsg(topic, payloadStr){
+  let m; try{ m=JSON.parse(payloadStr); }catch(e){return;}
+  if(!m || m.from===Net.selfId) return;
+  if(m.t==='offer') handleRemoteOffer(m);
+  else if(m.t==='answer') handleRemoteAnswer(m);
 }
-async function joinPasteOffer(offerStr){
-  pc = new RTCPeerConnection({iceServers:ICE});
-  pc.ondatachannel = (ev) => { dc = ev.channel; attachDataChannel(dc, 'remote'); };
-  const offer = decodeDesc(offerStr);
-  await pc.setRemoteDescription(offer);
-  const answer = await pc.createAnswer();
-  await pc.setLocalDescription(answer);
-  await waitForIce(pc);
-  return encodeDesc(pc.localDescription);
+async function handleRemoteOffer(m){
+  if(!joiningRemote) return;
+  if(pc){
+    if(pc.localDescription && pc.localDescription.type==='answer') brokerPublish({from:Net.selfId, t:'answer', sdp:pc.localDescription});
+    return;
+  }
+  try {
+    remoteHostId = m.from;
+    pc = new RTCPeerConnection({iceServers:ICE});
+    pc.ondatachannel = (e)=>{ dc=e.channel; attachDataChannel(dc, remoteHostId); };
+    await pc.setRemoteDescription(m.sdp);
+    const ans = await pc.createAnswer();
+    await pc.setLocalDescription(ans);
+    await waitForIce(pc);
+    brokerPublish({from:Net.selfId, t:'answer', sdp:pc.localDescription});
+    $('join-remote-status').textContent = 'Connected to broker. Establishing direct link…';
+  } catch(err){
+    $('join-remote-status').textContent = 'Connection failed: '+err.message;
+    joiningRemote = false;
+  }
+}
+async function handleRemoteAnswer(m){
+  if(!Net.hosting || !pc || pc.remoteDescription) return;
+  try {
+    await pc.setRemoteDescription(m.sdp);
+    attachDataChannel(dc, m.from);
+    if(offerTimer){ clearInterval(offerTimer); offerTimer=null; }
+    $('remote-status').textContent = 'Remote player connected.';
+  } catch(err){}
 }
 
 /* ---------- Game state ---------- */
 const Game = {
-  active: false,
-  startArticle: '',
-  targetArticle: '',
-  startTime: 0,
-  // my state
-  myName: '',
-  myArticle: '',      // canonical title
-  myPath: [],         // list of canonical titles
-  myClicks: 0,
-  myWon: false,
-  myFinishedAt: 0,
-  finished: false,    // race ended (someone won)
-  joinedHost: false,  // joiner has been accepted by a host
-  // peer state: id -> {name, article, clicks, won, finishedAt, kind}
-  peers: new Map(),
+  active: false, startArticle:'', targetArticle:'', startTime:0,
+  myName:'', myArticle:'', myPath:[], myClicks:0, myWon:false, myFinishedAt:0,
+  finished:false, joinedHost:false, peers: new Map(),
 };
-
 function myStateMsg(){
   return { t:'state', name: Game.myName, article: Game.myArticle,
     clicks: Game.myClicks, won: Game.myWon, finishedAt: Game.myFinishedAt,
@@ -582,250 +615,186 @@ function myStateMsg(){
 /* ---------- UI wiring ---------- */
 function showLobby(){ $('lobby').style.display='block'; $('game').style.display='none'; }
 function showGame(){ $('lobby').style.display='none'; $('game').style.display='block'; }
-
 function setNetPill(state){
-  const pill = $('net-pill'), txt = $('net-pill-txt');
-  pill.className = 'pill ' + (state==='live'?'live':state==='wait'?'wait':'');
-  txt.textContent = state==='live' ? 'connected' : state==='wait' ? 'waiting for players' : 'offline';
+  const pill=$('net-pill'), txt=$('net-pill-txt');
+  pill.className='pill '+(state==='live'?'live':state==='wait'?'wait':'');
+  txt.textContent = state==='live'?'connected':state==='wait'?'waiting for players':'offline';
 }
 function ensureName(){
   if(!Net.selfName){
     Net.selfName = 'Player '+Math.floor(Math.random()*900+100);
     Game.myName = Net.selfName;
-    const ni = $('name'); if(ni && !ni.value) ni.value = Net.selfName;
+    const ni=$('name'); if(ni && !ni.value) ni.value = Net.selfName;
   }
 }
 
-/* host flow */
-$('btn-host').onclick = () => {
-  $('host-flow').classList.remove('hidden');
-  $('join-flow').classList.add('hidden');
-  Net.isHost = true;
-  // we don't set hosting=true until the game is opened
-};
-$('btn-join').onclick = () => {
-  $('join-flow').classList.remove('hidden');
-  $('host-flow').classList.add('hidden');
-  Net.isHost = false;
-  // ask any hosting tabs to announce
-  if(bc){ bc.postMessage({from:Net.selfId, to:'ALL', kind:'hello', name:Net.selfName, hosting:false, probe:true}); }
-};
+$('name').addEventListener('input', ()=>{ Net.selfName = $('name').value.trim(); Game.myName = Net.selfName; });
 
-$('rand-start').onclick = async (e)=>{
-  e.preventDefault(); const b=e.currentTarget; b.disabled=true; b.textContent='🎲 …';
-  try{ const t=await fetchRandomTitle(); $('start-article').value=t; }catch(err){ alert('Could not fetch a random article.'); }
-  b.disabled=false; b.textContent='🎲 Random';
-};
-$('rand-target').onclick = async (e)=>{
-  e.preventDefault(); const b=e.currentTarget; b.disabled=true; b.textContent='🎲 …';
-  try{ const t=await fetchRandomTitle(); $('target-article').value=t; }catch(err){ alert('Could not fetch a random article.'); }
-  b.disabled=false; b.textContent='🎲 Random';
-};
+$('btn-host').onclick = ()=>{ $('host-flow').classList.remove('hidden'); $('join-flow').classList.add('hidden'); Net.isHost=true; };
+$('btn-join').onclick = ()=>{ $('join-flow').classList.remove('hidden'); $('host-flow').classList.add('hidden'); Net.isHost=false;
+  if(bc){ bc.postMessage({from:Net.selfId, to:'ALL', kind:'hello', name:Net.selfName, hosting:false, probe:true}); } };
 
-$('host-open').onclick = async () => {
-  const name = $('name').value.trim() || ('Player '+Math.floor(Math.random()*900+100));
-  Net.selfName = name; Game.myName = name;
+$('rand-start').onclick = async (e)=>{ e.preventDefault(); const b=e.currentTarget; b.disabled=true; b.textContent='🎲 …';
+  try{ $('start-article').value=await fetchRandomTitle(); }catch(err){ alert('Could not fetch a random article.'); }
+  b.disabled=false; b.textContent='🎲 Random'; };
+$('rand-target').onclick = async (e)=>{ e.preventDefault(); const b=e.currentTarget; b.disabled=true; b.textContent='🎲 …';
+  try{ $('target-article').value=await fetchRandomTitle(); }catch(err){ alert('Could not fetch a random article.'); }
+  b.disabled=false; b.textContent='🎲 Random'; };
+
+$('host-open').onclick = async ()=>{
+  ensureName();
   let start = $('start-article').value.trim();
   let target = $('target-article').value.trim();
-  const b = $('host-open'); b.disabled=true; b.textContent='Opening…';
+  const b=$('host-open'); b.disabled=true; b.textContent='Opening…';
   try {
     if(!start) start = await fetchRandomTitle();
     if(!target) target = await fetchRandomTitle();
-    // normalise both through Wikipedia (resolve redirects, confirm they exist)
     const s = await fetchArticle(start); Game.startArticle = s.title;
     const t = await fetchArticle(target); Game.targetArticle = t.title;
     if(Game.startArticle.toLowerCase() === Game.targetArticle.toLowerCase())
       throw new Error('Start and target are the same article. Pick a different target.');
-  } catch(err){
-    b.disabled=false; b.textContent='Open game & invite';
-    alert('Could not open the game: '+err.message);
-    return;
-  }
+  } catch(err){ b.disabled=false; b.textContent='Open game & get code'; alert('Could not open the game: '+err.message); return; }
+
+  roomCode = genCode();
+  $('room-code').value = roomCode;
   Net.hosting = true;
   $('host-lobby').classList.remove('hidden');
   b.textContent='Game open';
   setNetPill('wait');
-  // start announcing locally + WebRTC offer
+
   localAnnounce();
   if(helloTimer) clearInterval(helloTimer);
   helloTimer = setInterval(localAnnounce, 2500);
+
   try {
-    const offer = await hostCreateOffer();
-    $('offer-out').value = offer;
+    await brokerConnect(roomCode);
+    $('remote-status').textContent = 'Room code ready. Share "'+roomCode+'" with a friend.';
+    pc = new RTCPeerConnection({iceServers:ICE});
+    dc = pc.createDataChannel('game', {ordered:true});
+    const offer = await pc.createOffer();
+    await pc.setLocalDescription(offer);
+    await waitForIce(pc);
+    const sendOffer = () => { if(pc && !pc.remoteDescription && pc.localDescription) brokerPublish({from:Net.selfId, t:'offer', sdp:pc.localDescription}); };
+    sendOffer();
+    if(offerTimer) clearInterval(offerTimer);
+    offerTimer = setInterval(sendOffer, 2500);
   } catch(err){
-    $('remote-status').textContent = 'WebRTC unavailable in this browser — local (same-browser) play still works.';
+    $('remote-status').textContent = 'Cross-device broker unreachable ('+err.message+'). Same-browser play still works.';
   }
   refreshHostPlayers();
 };
 
-$('copy-offer').onclick = ()=>{
-  $('offer-out').select(); document.execCommand('copy');
-  $('copy-offer').textContent='Copied'; setTimeout(()=>$('copy-offer').textContent='Copy', 1500);
-};
-$('copy-answer').onclick = ()=>{
-  $('answer-out').select(); document.execCommand('copy');
-  $('copy-answer').textContent='Copied'; setTimeout(()=>$('copy-answer').textContent='Copy', 1500);
-};
-
-$('answer-go').onclick = async ()=>{
-  const v = $('answer-in').value.trim();
-  if(!v || !pc){ alert('Paste the reply code your friend sent back first.'); return; }
-  try { await hostPasteAnswer(v); $('remote-status').textContent='Connecting…'; }
-  catch(err){ alert('Invalid reply code: '+err.message); }
-};
-
-$('offer-go').onclick = async ()=>{
-  const v = $('offer-in').value.trim();
-  if(!v){ alert('Paste the host\'s invite code first.'); return; }
-  ensureName();
-  const b = $('offer-go'); b.disabled=true; b.textContent='Working…';
-  try {
-    const answer = await joinPasteOffer(v);
-    $('answer-out').value = answer;
-    $('join-remote-status').textContent = 'Reply code ready — send it to the host. Once they paste it, you\'ll connect.';
-  } catch(err){
-    alert('Invalid invite code: '+err.message);
-  }
-  b.disabled=false; b.textContent='Generate reply code';
-};
+$('copy-code').onclick = ()=>{ $('room-code').select(); document.execCommand('copy');
+  $('copy-code').textContent='Copied'; setTimeout(()=>$('copy-code').textContent='Copy', 1500); };
 
 $('host-start').onclick = ()=>{
   if(!Net.hosting) return;
-  if(Net.joinedPeers.size < 1){ alert('No one has joined yet. Open another tab or have a friend use the invite code.'); return; }
+  if(Net.joinedPeers.size < 1){ alert('No one has joined yet. Share the room code, or open another tab on this browser.'); return; }
   const startMsg = { t:'start', start: Game.startArticle, target: Game.targetArticle, startTime: Date.now(), hostName: Net.selfName };
-  // send only to peers who actually joined (don't wake up idle tabs)
   for(const id of Net.joinedPeers){ Net.sendTo(id, startMsg); }
   beginRace(Game.startArticle, Game.targetArticle, Date.now());
 };
 
-$('join-local-go').onclick = ()=>{
+$('join-local-go').onclick = ()=>{ ensureName();
+  for(const [id,p] of Net.peers){ Net.sendTo(id, { t:'join', name: Net.selfName }); }
+  $('join-local').classList.add('hidden'); };
+
+$('join-code-go').onclick = async ()=>{
+  const code = $('room-code-in').value.trim().toUpperCase();
+  if(code.length < 5){ alert('Enter the 5-character room code from the host.'); return; }
   ensureName();
-  // send join to the discovered host
-  for(const [id,p] of Net.peers){
-    Net.sendTo(id, { t:'join', name: Net.selfName });
+  const b=$('join-code-go'); b.disabled=true; b.textContent='Connecting…';
+  $('join-remote-status').textContent='Connecting to the broker…';
+  try {
+    await brokerConnect(code);
+    roomCode = code;
+    joiningRemote = true;
+    $('join-remote-status').textContent='Connected. Waiting for the host\'s invitation…';
+  } catch(err){
+    $('join-remote-status').textContent='Could not connect: '+err.message;
+    b.disabled=false; b.textContent='Connect';
   }
-  $('join-local').classList.add('hidden');
 };
+$('room-code-in').addEventListener('input', (e)=>{ e.target.value = e.target.value.toUpperCase(); });
 
-$('leave-game').onclick = ()=>{
-  endRaceCleanup();
-  showLobby();
-};
-
-$('end-again').onclick = ()=>{
-  $('end-modal').classList.add('hidden');
-  endRaceCleanup();
-  showLobby();
-};
-
+$('leave-game').onclick = ()=>{ endRaceCleanup(); showLobby(); };
+$('end-again').onclick = ()=>{ $('end-modal').classList.add('hidden'); endRaceCleanup(); showLobby(); };
 $('back-btn').onclick = ()=>{
   if(Game.myPath.length > 1){
     Game.myPath.pop();
     Game.myArticle = Game.myPath[Game.myPath.length-1];
     Game.myClicks = Math.max(0, Game.myClicks - 1);
-    // re-render from cache if possible else re-fetch
     const cached = articleCache.get(Game.myArticle);
     if(cached){ renderArticle(cached); $('cur-title').textContent = Game.myArticle; }
     else { loadArticle(Game.myArticle, true); }
     updateGameHud(); broadcastState();
   }
 };
+$('rand-hint').onclick = ()=>{ if(!Game.targetArticle) return;
+  alert('Target: '+Game.targetArticle+'\n\nYou can only travel by clicking links inside the article viewer — no cheating!'); };
 
-$('rand-hint').onclick = ()=>{
-  if(!Game.targetArticle) return;
-  alert('Target: '+Game.targetArticle+'\n\nOpen a new tab and search Wikipedia for hints — but you can only travel by clicking links inside the article viewer!');
-};
-
-// clicks on article links
 $('article-content').addEventListener('click', (e)=>{
   if(!Game.active) return;
   const a = e.target.closest('a');
   if(!a) return;
   e.preventDefault();
   const title = a.getAttribute('data-nav');
-  if(title){
-    navigateTo(title);
-  }
+  if(title) navigateTo(title);
 });
 
 /* ---------- article cache + loading ---------- */
-const articleCache = new Map(); // title -> html
+const articleCache = new Map();
 async function loadArticle(title, silent){
-  if(!silent){ $('article-content').innerHTML = '<span class="spinner"></span> Loading article…'; $('cur-title').textContent = 'Loading…'; }
+  if(!silent){ $('article-content').innerHTML='<span class="spinner"></span> Loading article…'; $('cur-title').textContent='Loading…'; }
   try {
     const res = await fetchArticle(title);
     articleCache.set(res.title, res.html);
     Game.myArticle = res.title;
-    if(!Game.myPath.length || Game.myPath[Game.myPath.length-1] !== res.title){
-      Game.myPath.push(res.title);
-    }
+    if(!Game.myPath.length || Game.myPath[Game.myPath.length-1] !== res.title) Game.myPath.push(res.title);
     renderArticle(res.html);
     $('cur-title').textContent = res.title;
-    // win check
     if(Game.active && res.title.toLowerCase() === Game.targetArticle.toLowerCase()){
-      Game.myWon = true; Game.myFinishedAt = Date.now();
-      broadcastState();
-      handleWin(true);
-    } else {
-      broadcastState();
-    }
+      Game.myWon=true; Game.myFinishedAt=Date.now(); broadcastState(); handleWin(true);
+    } else { broadcastState(); }
     updateGameHud();
   } catch(err){
-    $('article-content').innerHTML = '<p style="color:#b00">Could not load that article: '+err.message+'</p><p>Try another link.</p>';
+    $('article-content').innerHTML='<p style="color:#b00">Could not load that article: '+err.message+'</p><p>Try another link.</p>';
     $('cur-title').textContent = title;
   }
 }
-
-async function navigateTo(title){
-  if(Game.finished) return;
-  Game.myClicks += 1;
-  updateGameHud();
-  await loadArticle(title);
-}
-
+async function navigateTo(title){ if(Game.finished) return; Game.myClicks += 1; updateGameHud(); await loadArticle(title); }
 function broadcastState(){ if(Game.active || Game.myWon) Net.broadcast(myStateMsg()); }
-
-function updateGameHud(){
-  $('g-clicks').textContent = Game.myClicks;
-  $('g-target').textContent = Game.targetArticle || '…';
-  renderRacers();
-}
+function updateGameHud(){ $('g-clicks').textContent=Game.myClicks; $('g-target').textContent=Game.targetArticle||'…'; renderRacers(); }
 
 function renderRacers(){
-  const box = $('racers'); box.innerHTML = '';
-  // me
-  const me = document.createElement('div');
-  me.className = 'racer me' + (Game.myWon?' winner':'');
-  me.innerHTML = '<div class="top"><span class="nm">'+esc(Game.myName||'You')+'</span><span class="ck"><b>'+Game.myClicks+'</b> clicks</span></div>'+
+  const box=$('racers'); box.innerHTML='';
+  const me=document.createElement('div');
+  me.className='racer me'+(Game.myWon?' winner':'');
+  me.innerHTML='<div class="top"><span class="nm">'+esc(Game.myName||'You')+'</span><span class="ck"><b>'+Game.myClicks+'</b> clicks</span></div>'+
     '<div class="now">on <b>'+esc(Game.myArticle||'—')+'</b></div>'+
     '<div class="st '+(Game.myWon?'fin':'prog')+'">'+(Game.myWon?'🏁 finished':'racing')+'</div>';
   box.appendChild(me);
-  // peers
   for(const p of Game.peers.values()){
-    const el = document.createElement('div');
-    el.className = 'racer' + (p.won?' winner':'');
-    el.innerHTML = '<div class="top"><span class="nm">'+esc(p.name||'Opponent')+'</span><span class="ck"><b>'+p.clicks+'</b> clicks</span></div>'+
+    const el=document.createElement('div');
+    el.className='racer'+(p.won?' winner':'');
+    el.innerHTML='<div class="top"><span class="nm">'+esc(p.name||'Opponent')+'</span><span class="ck"><b>'+p.clicks+'</b> clicks</span></div>'+
       '<div class="now">on <b>'+esc(p.article||'—')+'</b></div>'+
       '<div class="st '+(p.won?'fin':'prog')+'">'+(p.won?'🏁 finished':'racing')+'</div>';
     box.appendChild(el);
   }
-  if(Game.peers.size === 0){
-    const e = document.createElement('div'); e.className='sub'; e.style.margin='0';
-    e.textContent='Waiting for other racers to join…'; box.appendChild(e);
-  }
+  if(Game.peers.size===0){ const e=document.createElement('div'); e.className='sub'; e.style.margin='0';
+    e.textContent='Waiting for other racers to join…'; box.appendChild(e); }
 }
-function esc(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 function refreshHostPlayers(){
-  const box = $('host-players'); box.innerHTML = '';
-  const me = document.createElement('div'); me.className='p me';
-  me.innerHTML = '<span><b>'+esc(Net.selfName||'You')+'</b> (host)</span><span class="badge">ready</span>';
+  const box=$('host-players'); box.innerHTML='';
+  const me=document.createElement('div'); me.className='p me';
+  me.innerHTML='<span><b>'+esc(Net.selfName||'You')+'</b> (host)</span><span class="badge">ready</span>';
   box.appendChild(me);
   for(const id of Net.joinedPeers){
-    const p = Net.peers.get(id);
-    if(!p) continue;
-    const e = document.createElement('div'); e.className='p';
-    e.innerHTML = '<span>'+esc(p.name||'Player')+'</span><span class="badge">joined</span>';
+    const p=Net.peers.get(id); if(!p) continue;
+    const e=document.createElement('div'); e.className='p';
+    e.innerHTML='<span>'+esc(p.name||'Player')+'</span><span class="badge">joined</span>';
     box.appendChild(e);
   }
   $('host-start').disabled = Net.joinedPeers.size < 1;
@@ -833,36 +802,28 @@ function refreshHostPlayers(){
 
 /* ---------- race lifecycle ---------- */
 function beginRace(start, target, startTime){
-  Game.active = true; Game.finished = false;
-  Game.startArticle = start; Game.targetArticle = target; Game.startTime = startTime;
-  Game.myPath = []; Game.myClicks = 0; Game.myWon = false; Game.myFinishedAt = 0;
+  Game.active=true; Game.finished=false;
+  Game.startArticle=start; Game.targetArticle=target; Game.startTime=startTime;
+  Game.myPath=[]; Game.myClicks=0; Game.myWon=false; Game.myFinishedAt=0;
   Game.peers.clear();
   showGame();
-  $('g-target').textContent = target;
+  $('g-target').textContent=target;
   updateGameHud(); renderRacers();
   loadArticle(start);
   if(helloTimer){ clearInterval(helloTimer); helloTimer=null; }
-  Net.hosting = false; // lobby closed to new joiners
+  Net.hosting=false;
   startTimer();
 }
-
-let timerInt = null;
-function startTimer(){
-  if(timerInt) clearInterval(timerInt);
-  timerInt = setInterval(()=>{
-    if(!Game.active && !Game.myWon) return;
-    const s = (Date.now() - Game.startTime)/1000;
-    $('g-time').textContent = fmtTime(s);
-  }, 250);
-}
-function stopTimer(){ if(timerInt){ clearInterval(timerInt); timerInt=null; } }
+let timerInt=null;
+function startTimer(){ if(timerInt)clearInterval(timerInt);
+  timerInt=setInterval(()=>{ if(!Game.active && !Game.myWon)return;
+    $('g-time').textContent=fmtTime((Date.now()-Game.startTime)/1000); }, 250); }
+function stopTimer(){ if(timerInt){clearInterval(timerInt); timerInt=null;} }
 
 function handleWin(iWon){
-  Game.active = false;
-  Game.finished = true;
-  stopTimer();
+  Game.active=false; Game.finished=true; stopTimer();
   $('end-title').textContent = iWon ? '🏁 You won!' : 'You lost';
-  const t = (Game.myFinishedAt - Game.startTime)/1000;
+  const t=(Game.myFinishedAt-Game.startTime)/1000;
   $('end-detail').textContent = iWon
     ? 'You reached "'+Game.targetArticle+'" in '+Game.myClicks+' clicks and '+fmtTime(t)+'.'
     : 'A rival reached the target first. You were at "'+Game.myArticle+'" with '+Game.myClicks+' clicks.';
@@ -872,104 +833,83 @@ function handleWin(iWon){
 function endRaceCleanup(){
   Game.active=false; Game.finished=false; Game.myWon=false; Game.joinedHost=false;
   Game.peers.clear(); Game.myPath=[]; Game.myClicks=0;
-  Net.joinedPeers.clear();
+  Net.joinedPeers.clear(); Net.hosting=false; joiningRemote=false;
   stopTimer();
-  // reset lobby
-  Net.hosting=false;
-  $('host-lobby').classList.add('hidden');
-  $('host-flow').classList.add('hidden');
-  $('join-flow').classList.add('hidden');
-  $('offer-out').value=''; $('answer-in').value=''; $('offer-in').value=''; $('answer-out').value='';
-  $('remote-status').textContent=''; $('join-remote-status').textContent='Waiting for the host to paste your reply code...';
-  $('host-open').disabled=false; $('host-open').textContent='Open game & invite';
+  if(broker){ try{broker.close();}catch(e){} broker=null; }
+  if(offerTimer){ clearInterval(offerTimer); offerTimer=null; }
+  if(pc){ try{pc.close();}catch(e){} pc=null; } dc=null; remoteHostId=null; roomCode=null;
   if(helloTimer){ clearInterval(helloTimer); helloTimer=null; }
+  $('host-lobby').classList.add('hidden'); $('host-flow').classList.add('hidden'); $('join-flow').classList.add('hidden');
+  $('join-local').classList.add('hidden');
+  $('room-code').value=''; $('room-code-in').value='';
+  $('remote-status').textContent='Waiting for a remote player to join with this code…';
+  $('join-remote-status').textContent='';
+  $('join-code-go').disabled=false; $('join-code-go').textContent='Connect';
+  $('host-open').disabled=false; $('host-open').textContent='Open game & get code';
   setNetPill('offline');
 }
 
-/* ---------- net message handler ---------- */
+/* ---------- net handlers ---------- */
 Net.onPeer = (p)=>{
-  if(Net.isHost){
-    refreshHostPlayers();
-  } else if(p.kind === 'webrtc'){
-    // remote joiner: the moment the data channel opens, request to join
-    ensureName();
-    Net.sendTo(p.id, { t:'join', name: Net.selfName });
-  }
+  if(Net.isHost) refreshHostPlayers();
+  else if(p.kind === 'webrtc'){ ensureName(); Net.sendTo(p.id, { t:'join', name: Net.selfName }); }
   setNetPill('live');
-  // if I'm in an active race, send them my current state so they sync
-  if(Game.active){ broadcastState(); }
+  if(Game.active) broadcastState();
 };
-
 Net.onPeerLeft = (p)=>{
   Net.joinedPeers.delete(p.id);
   if(Net.isHost) refreshHostPlayers();
-  // remove from race peer map if matches
   for(const [k,v] of Game.peers){ if(v===p || k===p.id){ Game.peers.delete(k); } }
   if(Game.active) renderRacers();
   if(Net.peers.size===0) setNetPill(Game.active?'live':'wait');
 };
-
 Net.onMessage = (fromId, msg)=>{
   if(!msg || !msg.t) return;
   switch(msg.t){
-    case 'hello': {
-      // a tab announced itself; if I'm hosting and in lobby, nothing automatic — they'll send join.
-      // but if I'm joining and they're hosting, show the local-join panel.
+    case 'hello':
       if(!Net.isHost && msg.hosting && !Game.active){
         $('join-local').classList.remove('hidden');
         $('local-host-name').textContent = msg.name || 'A host';
-        Game._lastHostId = fromId;
       }
       break;
-    }
-    case 'join': {
-      // someone wants to join my hosted game
+    case 'join':
       if(Net.isHost && Net.hosting){
-        const p = Net.peers.get(fromId);
-        if(p){ p.name = msg.name || 'Player'; }
+        const p = Net.peers.get(fromId); if(p){ p.name = msg.name || 'Player'; }
         Net.joinedPeers.add(fromId);
         refreshHostPlayers();
-        // send them the game config so their UI updates
-        Net.sendTo(fromId, { t:'hosted', hostName: Net.selfName,
-          start: Game.startArticle, target: Game.targetArticle });
+        Net.sendTo(fromId, { t:'hosted', hostName: Net.selfName, start: Game.startArticle, target: Game.targetArticle });
         setNetPill('wait');
       }
       break;
-    }
-    case 'hosted': {
-      // host told me about the game
-      Game.joinedHost = true;
-      ensureName();
-      Game.myName = Net.selfName;
-      // remember config for display; actual start comes via 'start'
+    case 'hosted':
+      Game.joinedHost = true; ensureName(); Game.myName = Net.selfName;
       Game.startArticle = msg.start; Game.targetArticle = msg.target;
       $('join-remote-status').textContent = 'Connected to host '+msg.hostName+'. Waiting for the race to start…';
       setNetPill('wait');
       break;
-    }
-    case 'start': {
-      // host started the race (only joiners who joined the host receive this)
+    case 'start':
       if(!Game.joinedHost && !Net.isHost) break;
       Game.myName = Net.selfName;
       beginRace(msg.start, msg.target, msg.startTime || Date.now());
       break;
-    }
     case 'state': {
-      // peer state update during race
       if(!Game.active && !Game.myWon) return;
-      const peer = Game.peers.get(fromId) || {name:msg.name, article:msg.article, clicks:msg.clicks, won:false, finishedAt:0};
+      const pid = msg.from || fromId;
+      const peer = Game.peers.get(pid) || {name:msg.name, article:msg.article, clicks:msg.clicks, won:false, finishedAt:0};
       peer.name = msg.name || peer.name;
       peer.article = msg.article || peer.article;
       peer.clicks = msg.clicks;
       peer.won = !!msg.won;
       peer.finishedAt = msg.finishedAt || peer.finishedAt;
-      Game.peers.set(fromId, peer);
+      Game.peers.set(pid, peer);
       renderRacers();
-      // if they won and I haven't, I lost
+      if(Net.isHost){
+        const sender = Net.peers.get(fromId);
+        const targetKind = sender && sender.kind === 'webrtc' ? 'local' : 'webrtc';
+        for(const oid of Net.peersOfKind(targetKind)){ if(oid !== fromId) Net.sendTo(oid, msg); }
+      }
       if(peer.won && !Game.myWon && !Game.finished){
-        Game.finished = true; Game.active = false;
-        stopTimer();
-        handleWin(false);
+        Game.finished=true; Game.active=false; stopTimer(); handleWin(false);
       }
       break;
     }
@@ -981,14 +921,8 @@ Net.onMessage = (fromId, msg)=>{
   }
 };
 
-/* ---------- init ---------- */
 (function init(){
-  // restore name if typed before
-  $('name').addEventListener('input', ()=>{ Net.selfName = $('name').value.trim(); });
-  // announce presence so existing hosting tabs reply
-  if(bc){
-    bc.postMessage({from:Net.selfId, to:'ALL', kind:'hello', name:Net.selfName, hosting:false, probe:true});
-  }
+  if(bc){ bc.postMessage({from:Net.selfId, to:'ALL', kind:'hello', name:Net.selfName, hosting:false, probe:true}); }
   setNetPill('offline');
   showLobby();
 })();
